@@ -13,20 +13,29 @@ rispettivo figlio prima di stampare il proprio messaggio di chiusura. */
 
 int main() {
     pid_t pidPadre = fork();
-    pid_t pidNipote = fork();
 
     //Controllo errore nel fork()
-    if (pidPadre < 0 || pidNipote < 0) {
+    if (pidPadre < 0) {
         perror("Errore nel fork\n");
         exit(-1);
     }
-
-    if (!pidNipote) {
-        fprintf(stdout, "Ciao sono il nipote\n");
-        fprintf(stdout, "Ho finito, PID: %d\n", getpid());
-        exit(0);
+    
+    if (pidPadre == 0) {
+        pid_t pidFiglio = fork();
+    
+        //Controllo errore nel fork()
+        if (pidFiglio < 0) {
+            perror("Errore nel fork\n");
+            exit(-1);
+        }
+        
+        if (!pidFiglio) {
+            fprintf(stdout, "Ciao sono il nipote\n");
+            fprintf(stdout, "Ho finito, PID: %d\n", getpid());
+            exit(0);
+        }
     }
-
+    
     if (!pidPadre) {
         wait(NULL);
         fprintf(stdout, "Ciao sono il padre\n");
