@@ -11,7 +11,7 @@ rispettivo figlio prima di stampare il proprio messaggio di chiusura. */
 #include <sys/wait.h>
 
 
-int main() {
+int main3() {
     pid_t pidPadre = fork();
 
     //Controllo errore nel fork()
