@@ -10,7 +10,7 @@ iniziare a stampare i numeri da 6 a 10. */
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main(void) {
+int main1() {
     pid_t ritorno = fork();
 
     //Controllo errore nel fork()
