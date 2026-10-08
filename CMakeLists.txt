@@ -7,4 +7,5 @@ add_executable(untitled "Esercizi 08-10-2026/es1.c"
         "Esercizi 08-10-2026/es1.c"
         "Esercizi 08-10-2026/es2.c"
         "Esercizi 08-10-2026/es3.c"
-        "Esercizi 08-10-2026/es4.c")
+        "Esercizi 08-10-2026/es4.c"
+        "Esercizi 08-10-2026/EsercizioFD.c")
