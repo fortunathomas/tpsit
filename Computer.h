@@ -20,7 +20,7 @@ private:
     int dimensioniRAM;
     int dimensioniDisco;
     int dimensioniMonitor;
-    Data annoDiAcquisto;
+    Data dataDiAcquisto;
     
 public:
     Computer() {
@@ -31,27 +31,37 @@ public:
         this->dimensioniRAM = 0;
         this->dimensioniDisco = 0;
         this->dimensioniMonitor = 0;
-        this->annoDiAcquisto = { 0, 00, 0000};
+        this->dataDiAcquisto = { 00, 00, 0000};
     }
-    
-    Computer(std::string marca, std::string modello, double velocitaProcessore, int dimensioniRAM, int dimensioniDisco, int dimensioniMonitor, Data annoDiAcquisto)
+    //Costruttore per ripristino da file
+    Computer(int codice, std::string marca, std::string modello, double velocitaProcessore, int dimensioniRAM, int dimensioniDisco, int dimensioniMonitor, Data dataDiAcquisto)
     {
-        codice = ++pcCreati;
+        this->codice = codice;
+        if (codice > pcCreati) pcCreati = codice;
         this->marca = marca;
         this->modello = modello;
         this->velocitaProcessore = velocitaProcessore < 0 ? 0 : velocitaProcessore;
         this->dimensioniRAM = dimensioniRAM < 0 ? 0 : dimensioniRAM;
         this->dimensioniDisco = dimensioniDisco < 0 ? 0 : dimensioniDisco;
         this->dimensioniMonitor = dimensioniMonitor < 0 ? 0 : dimensioniMonitor;
-        this->annoDiAcquisto = annoDiAcquisto;
-    };
+        this->dataDiAcquisto = dataDiAcquisto;
+    }
+    
+    //Costruttore base
+    Computer(std::string marca, std::string modello, double velocitaProcessore, int dimensioniRAM, int dimensioniDisco, int dimensioniMonitor, Data dataDiAcquisto)
+        : Computer(++pcCreati, marca, modello, velocitaProcessore, dimensioniRAM, dimensioniDisco, dimensioniMonitor, dataDiAcquisto) {}
+    
     
     int GetCodice() const { return codice; }
-    std::string GetNome() const { return marca + " " + modello; }
+    std::string GetMarca() const { return marca; }
+    std::string GetModello() const { return modello; }
     double GetVelocitaProcessore() const { return velocitaProcessore; }
     int GetDimensioniRAM() const { return dimensioniRAM; }
     int GetDimensioniDisco() const { return dimensioniDisco; }
+    int GetDimensioniMonitor() const { return dimensioniMonitor; }
+    Data GetDataDiAcquisto() const { return dataDiAcquisto; }
     
+    std::string GetNome() const { return marca + " " + modello; }
 };
 
 

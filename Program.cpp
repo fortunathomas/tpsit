@@ -46,4 +46,9 @@ int main() {
     for (int i = 0; i < pcTrovati; i++) {
         std::cout << lista[i].GetNome() << std::endl;
     }
+    
+    g.SalvaPC("catalogo.txt");
+
+    GestionePC g2;
+    g2.CaricaPC("catalogo.txt");
 }
