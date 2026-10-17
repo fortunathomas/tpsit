@@ -47,11 +47,9 @@ public:
     };
     
     int GetCodice() const { return codice; }
-    
+    std::string GetNome() const { return marca + " " + modello; }
     double GetVelocitaProcessore() const { return velocitaProcessore; }
-    
     int GetDimensioniRAM() const { return dimensioniRAM; }
-    
     int GetDimensioniDisco() const { return dimensioniDisco; }
     
 };

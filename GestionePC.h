@@ -1,6 +1,8 @@
 #ifndef TPSIT_GESTIONEPC_H
 #define TPSIT_GESTIONEPC_H
 
+#include <iostream>
+
 #include "Computer.h"
 
 
