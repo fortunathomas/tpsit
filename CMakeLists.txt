@@ -3,12 +3,13 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(untitled es2/main.cpp
-        es2/classi/Personaggio.cpp
-        es2/classi/Personaggio.h
-        es2/classi/Mago.cpp
-        es2/classi/Mago.h
-        es2/classi/Arciere.cpp
-        es2/classi/Arciere.h
-        es2/classi/Guerriero.cpp
-        es2/classi/Guerriero.h)
+add_executable(untitled 
+        es3/main.cpp
+        es3/classi/MetodoPagamento.cpp
+        es3/classi/MetodoPagamento.h
+        es3/classi/CartaCredito.cpp
+        es3/classi/CartaCredito.h
+        es3/classi/PayPal.cpp
+        es3/classi/PayPal.h
+        es3/classi/Contanti.cpp
+        es3/classi/Contanti.h)
