@@ -3,13 +3,16 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(untitled 
-        es3/main.cpp
-        es3/classi/MetodoPagamento.cpp
-        es3/classi/MetodoPagamento.h
-        es3/classi/CartaCredito.cpp
-        es3/classi/CartaCredito.h
-        es3/classi/PayPal.cpp
-        es3/classi/PayPal.h
-        es3/classi/Contanti.cpp
-        es3/classi/Contanti.h)
+add_executable(untitled
+        es4/main.cpp
+        es4/classi/Notifica.cpp
+        es4/classi/Notifica.h
+        es4/classi/NotificaEmail.cpp
+        es4/classi/NotificaEmail.h
+        es4/classi/NotificaSMS.cpp
+        es4/classi/NotificaSMS.h
+        es4/classi/NotificaPush.cpp
+        es4/classi/NotificaPush.h
+        es4/classi/GestoreNotifiche.cpp
+        es4/classi/GestoreNotifiche.h
+)
